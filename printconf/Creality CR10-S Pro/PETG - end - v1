@@ -1,0 +1,13 @@
+; CREALITY CR10-S PRO
+; END CODE
+; PETG
+; 05/15/2020
+
+G91								; Relative positioning
+G1 Z120 E-10 F3000				; raise Z
+G90 							; Absolute positionning
+
+G1 X0 Y{machine_depth} F8000 	; Present print
+M106 S0 						; Turn-off fan
+M104 S0 						; Turn-off hotend
+M140 S60						; Reduce bed temp
