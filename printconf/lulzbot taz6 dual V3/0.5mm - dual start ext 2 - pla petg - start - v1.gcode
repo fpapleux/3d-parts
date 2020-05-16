@@ -87,7 +87,7 @@ M425 Z F0		    		 ; turn off measured Z backlash compensation. (if activated in 
 M204 S500                    ; set accel back to normal
 
 ; --- T1 TO PRINT TEMP
-M104 S230 T1				 ; set extruder temp -- HARDCODED TEMP
+M104 S240 T1				 ; set extruder temp -- HARDCODED TEMP
 ; ----------
 
 ; --- T0 to PRINT TEMP
@@ -100,7 +100,7 @@ M117 Heating...              ; LCD status message
 
 ; --- PRINT TEMP
 ; T1
-M109 R230 T1				 ; set extruder temp and wait -- HARDCODED TEMP
+M109 R240 T1				 ; set extruder temp and wait -- HARDCODED TEMP
 M109 R200 T0
 ; ----------
 
