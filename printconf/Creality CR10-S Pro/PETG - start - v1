@@ -1,0 +1,32 @@
+; CREALITY CR10-S PRO
+; START CODE
+; PETG
+; 05/15/2020
+
+M140 S60		; set bed temperature to the minimum that will ever be used by a print
+M104 S170		; set hotend temperature just to soften filament
+
+G90				; set all axes to absolute positioning
+M107			; turn off fans
+M109 R170		; wait for hotend temperature
+
+M302 S140		; Allow extrusion at soften temperature
+G92 E0			; reset extruder position
+G1 E-100 F400	; retract filament to prevent oozing
+M400			; wait for movements to finish
+M190 R60		; wait for bed temperature
+
+G28				; home
+M400			; wait to complete all tasks
+
+M140 S80		; set target bed temperature
+M104 S240		; set target extruder temperature
+G1 X0 Y0 F5000	; move away from a likely print start position to protect area
+G1 Z50			; raise hotend to allow for manipulation while heating if necessary
+M501			; Recall saved configuration from eeprom
+; M420 S1			; Enable ABL with saved Mesh
+
+M109 R240		; wait for print temperature
+M190 R80		; wait for bed temperature
+G1 E5			; feed filament back into the nozzle
+G0 Z{layer_height_0}	; position nozzle at layer 1 height
